@@ -473,4 +473,73 @@ public class ListaEnlazada<E> {
         return result;
     }
 
+    public ListaEnlazada<E> busqueda(String atributo, Object info) throws ListaVaciaExcepcion, ListaPosicionExcepcion, IllegalAccessException{
+        
+        if (isEmpty()) throw new ListaVaciaExcepcion();
+        
+        ListaEnlazada<E> resultado = new ListaEnlazada<>();
+
+        var tmpArray = toArray();
+        
+        obtenerAtributos(atributo);
+        
+        for(int i = 0 ; i < tmpArray.length ; i++){
+            if(compararTodo(this.obtener(i), info) != 0) continue;
+            resultado.insertar((this.obtener(i)));
+        }
+        
+        return resultado;
+    }
+    
+    public ListaEnlazada<E> busquedaLista(String atributo, ListaEnlazada<E> lista) throws ListaVaciaExcepcion, IllegalAccessException, ListaPosicionExcepcion{
+        
+        if (isEmpty() || lista.isEmpty()) throw new ListaVaciaExcepcion();
+        
+        ListaEnlazada<E> resultado = new ListaEnlazada<>();
+        
+        var tmpArray = toArray();
+        
+        var tmpList = lista.toArray();
+        
+        obtenerAtributos(atributo);
+        
+        for(int i = 0 ; i < tmpArray.length ; i++){
+            for (E tmpList1 : tmpList) {
+                if (compararList(this.obtener(i), tmpList1) != 0) {
+                    continue;
+                }
+                resultado.insertar(this.obtener(i));
+            }
+        }
+        
+        return resultado;
+    }
+    
+    private int compararTodo(E e1, Object e2) throws IllegalAccessException {
+
+        if (tipoCampo.equals("int") || tipoCampo.equals("double")) {
+
+            return Double.compare(((Number) campo.get(e1)).doubleValue(), ((Number) e2).doubleValue());
+
+        } else {
+            
+            return campo.get(e1).toString().toLowerCase().startsWith(e2.toString().toLowerCase()) ? 0 : 1;
+
+        }
+
+    }
+    
+    private int compararList(E e1, E e2) throws IllegalAccessException {
+
+        if (tipoCampo.equals("int") || tipoCampo.equals("double")) {
+
+            return Double.compare(((Number) campo.get(e1)).doubleValue(), ((Number) campo.get(e2)).doubleValue());
+
+        } else {
+            
+            return campo.get(e1).toString().toLowerCase().startsWith(campo.get(e2).toString().toLowerCase()) ? 0 : 1;
+
+        }
+
+    }
 }
