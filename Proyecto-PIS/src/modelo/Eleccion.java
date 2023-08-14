@@ -5,24 +5,9 @@ import java.util.Date;
 public class Eleccion {
     private int id;
     private String nombre;
-    private Date fecha;
+    private Date fechaInicio;
+    private Date fechaFinal;
     private String periodo;
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(String periodo) {
-        this.periodo = periodo;
-    }
 
     public int getId() {
         return id;
@@ -39,4 +24,29 @@ public class Eleccion {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Date getFechaFinal() {
+        return fechaFinal;
+    }
+
+    public void setFechaFinal(Date fechaFinal) {
+        this.fechaFinal = fechaFinal;
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+    
 }

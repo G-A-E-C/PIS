@@ -5,6 +5,13 @@ public class Localidad {
     private String nombre;
     private int idEleccion;
 
+    public Localidad() {
+    }
+
+    public Localidad(int idEleccion) {
+        this.idEleccion = idEleccion;
+    }
+    
     public int getId() {
         return id;
     }

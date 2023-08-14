@@ -5,6 +5,13 @@ public class PadronElectoral {
     private String nombre;
     private int idLocalidad;
 
+    public PadronElectoral() {
+    }
+
+    public PadronElectoral(int idLocalidad) {
+        this.idLocalidad = idLocalidad;
+    }
+    
     public int getId() {
         return id;
     }
