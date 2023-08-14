@@ -1,13 +1,23 @@
 package modelo;
 
-public enum Dignidad {
-    PRESIDENTE(1),
-    VICEPRESIDENTE(2),
-    ASAMBLEISTA(3);
+public class Dignidad {
+    private int id;
+    private String nombre;
 
-    public final int id;
-    private Dignidad(int id){
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
 }

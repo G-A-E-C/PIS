@@ -1,4 +1,4 @@
-package controlador.adap;
+package controlador.conexion;
 
 import controlador.lista.ListaEnlazada;
 
@@ -171,7 +171,7 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
         return camel.toString();
     }
 
-    public String updateQuery(T obj, String id) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+    private String updateQuery(T obj, String id) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
 
         HashMap<String, Object> objMapped = mapping(obj);
 
