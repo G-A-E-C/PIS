@@ -1,4 +1,4 @@
-package controlador.adap;
+package controlador.conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

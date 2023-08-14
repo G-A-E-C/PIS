@@ -2,7 +2,7 @@ package modelo;
 
 public class Votante {
     private String dniPersona;
-    private char haVotado;
+    private String haVotado;
     private int idPadronElectoral;
 
     public String getDniPersona() {
@@ -13,11 +13,11 @@ public class Votante {
         this.dniPersona = dniPersona;
     }
 
-    public char getHaVotado() {
+    public String getHaVotado() {
         return haVotado;
     }
 
-    public void setHaVotado(char haVotado) {
+    public void setHaVotado(String haVotado) {
         this.haVotado = haVotado;
     }
 

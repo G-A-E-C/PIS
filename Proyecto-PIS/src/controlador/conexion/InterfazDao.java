@@ -1,4 +1,4 @@
-package controlador.adap;
+package controlador.conexion;
 
 import controlador.lista.ListaEnlazada;
 
@@ -9,6 +9,7 @@ public interface InterfazDao<T> {
     public void actualizar(T obj, String id) throws Exception;
 
     public ListaEnlazada<T> listar();
+    
     public T obtener(Object value, String id);
 
 }
